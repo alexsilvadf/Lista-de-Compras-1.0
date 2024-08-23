@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+        <script src="/js/script.js" defer></script>
+    <title>Lista de Compras</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-inputs">
+
+            <div class="header">
+                <h2>Lista de Compras</h2>
+            </div>
+            
+
+            <div class="inputs">
+                <input class="input-task" id="nomeProduto" type="text" placeholder="digite o nome do produto">
+
+                <input class="input-qtd" id="qtde" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Qtde">
+
+                <input class="input-valor" id="valorUnit" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  placeholder="Valor Unit.." >    
+
+                <input class="input-total" id="valorTotal" type="text" disabled>
+
+                <button class="button-add-task" id="btnAdicionar">Adicionar</button>
+            </div>
+
+            <div class="totalizadores">
+                <div class="total-itens">
+                   <h4>Total de Ítens: </h4> <span id="totalItens"></span>
+                </div>
+
+                <div class="total-geral">
+                    <h4>Total Geral: </h4> <span id="totalProdutos"></span>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+        <ul class="list-task">
+            <!-- <li class="task">
+                <img src="./img/checked.png">
+                <p>Arroz</p>
+                <img src="./img/trash.png" alt="">
+            </li>
+            <li class="task">
+                <img src="./img/checked.png">
+                <p>Arroz</p>
+                <img src="./img/trash.png" alt="">
+            </li> -->
+        </ul>
+    </div>
+</body>
+
+</html>

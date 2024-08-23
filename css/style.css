@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+}
+
+body {
+    background: url("/img/carrinho.jpg");
+    background-size: cover;
+}
+
+.container {
+    background-color: #d1d1d1;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 100px auto 0 auto;
+}
+
+.container-inputs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header {
+    border: 1px solid rgb(184, 178, 178);
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: rgb(76, 74, 74);
+}
+
+.input-task,
+.input-qtd,
+.input-valor,
+.input-total {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.input-qtd,
+.input-valor,
+.button-add-task {
+    margin: 10px 10px 0 0;
+}
+
+.input-qtd {
+    width: 15%;
+}
+
+.input-valor {
+    width: 20%;
+}
+
+.input-total {
+    width: 30%;
+    background-color: #6c97d8;
+    color: #fff;
+    font-weight: 700;
+}
+
+.button-add-task {
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    background-color: #003329;
+    color: #fff;
+    font-size: 17px;
+    padding: 0 15px;
+    float: right;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button-add-task:hover {
+    opacity: 0.8;
+}
+
+.button-add-task:active {
+    opacity: 0.5;
+}
+
+.list-task {
+    width: 100%;
+    list-style: none;
+    margin-top: 25px;
+}
+
+.task {
+    background-color: #f2f2f2;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+
+
+img {
+    height: 25px;
+    width: 25px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.task:hover img {
+    opacity: 1;
+    /* cursor: pointer; */
+}
+
+img:hover:nth-child(1){
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+img:hover:nth-child(2){
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.totalizadores {
+    height: 20px;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid rgb(184, 178, 178);
+    border-radius: 5px;
+}
+
+.totalizadores h4 {
+    color: rgb(76, 74, 74);
+}
+
+.totalizadores span {
+    margin-left: 5px;
+}
+
+.total-itens,
+.total-geral {
+    display: flex;
+}
+
+#totalProdutos {
+    font-weight: 900;
+    color: #db0421;
+}
