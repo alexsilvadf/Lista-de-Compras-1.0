@@ -13,6 +13,8 @@ lstProdutos = [
 totalGeral = 0;
 totItens = 0;
 
+// teste
+
 function renderizarTela() {
   ulProdutos.innerHTML = "";
 
