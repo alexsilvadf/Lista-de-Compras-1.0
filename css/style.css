@@ -22,9 +22,13 @@ height: 100vh;
     margin: 100px auto 0 auto;
 }
 
-.container-inputs {
+.container-inputs { 
     display: flex;
     flex-wrap: wrap;
+}
+
+.inputs{
+    width: 100%;
 }
 
 .header {
@@ -177,4 +181,12 @@ img:hover:nth-child(4) {
 #totalProdutos {
     font-weight: 900;
     color: #db0421;
+}
+
+
+@media (max-width: 440px){
+    .button-add-task{
+        width: 95%;
+    }
+    
 }
