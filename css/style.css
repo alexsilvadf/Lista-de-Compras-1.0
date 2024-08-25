@@ -8,7 +8,9 @@
 
 body {
     background: url("/img/carrinho.jpg");
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container {
