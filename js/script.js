@@ -11,6 +11,8 @@ lstProdutos = [{}];
 totalGeral = 0;
 totItens = 0;
 
+const maxDecimalPlaces = 2;
+
 // teste
 
 function renderizarTela() {
@@ -82,7 +84,7 @@ function renderizarTela() {
 }
 
 function adicionarProduto() {
-  if (nomeProduto.value === "" || qtde.value === "" || valorUnit === "") {
+  if (nomeProduto.value === "" || qtde.value === "" || valorUnit.value === "") {
     alert("Preencha todos os campos");
     return;
   } else {
@@ -111,13 +113,11 @@ function removerProduto(posicao, qtd, vlr) {
 
   lstProdutos.splice(posicao, 1);
 
-  let resultadoValor = vlr * qtd;
-  let resultadoQtde = totItens - qtd;
-  
+  let resultadoValor = vlr * qtd;  
+
   totalGeral -= resultadoValor;
+
   totItens -= qtd;
-
-
 
   renderizarTela();
 }
@@ -134,6 +134,16 @@ function calcularTotalParcial() {
   if (qtde.value !== "" && valorUnit.value !== "") {
     let parcial = parseInt(qtde.value) * parseFloat(valorUnit.value);
 
-    valorTotal.value = parcial;
+    valorTotal.value = parcial.toFixed(2);
+
+    valorUnit.value = valorUnit.slice(0,-1);
   }
 }
+
+valorUnit.addEventListener('input', () => {
+  const value = valorUnit.value;
+  const regex = new RegExp(`^\\d*(\\.\\d{0,${maxDecimalPlaces}})?$`);
+  if (!regex.test(value)) {
+    valorUnit.value = value.slice(0, -1); // Remove o último caractere inválido
+  }
+});
