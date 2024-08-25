@@ -90,6 +90,7 @@ body {
     width: 100%;
     list-style: none;
     margin-top: 25px;
+
 }
 
 .task {
@@ -103,9 +104,19 @@ body {
     border-radius: 5px;
     margin-bottom: 10px;
     font-size: 15px;
+
 }
 
 
+
+.dadosProd:nth-child(2) {
+    margin: 0 10px;
+    width: 80%;
+}
+
+.dadosProd:nth-child(3) {
+    margin-right: 10px;
+}
 
 img {
     height: 25px;
@@ -119,13 +130,13 @@ img {
     /* cursor: pointer; */
 }
 
-img:hover:nth-child(1){
+img:hover:nth-child(1) {
     cursor: pointer;
     height: 30px;
     width: 30px;
 }
 
-img:hover:nth-child(2){
+img:hover:nth-child(4) {
     cursor: pointer;
     height: 30px;
     width: 30px;

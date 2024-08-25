@@ -7,7 +7,9 @@ let btnAdicionar = document.querySelector("#btnAdicionar");
 let totalProdutos = document.querySelector("#totalProdutos");
 let totalItens = document.querySelector("#totalItens");
 
-lstProdutos = [{}];
+lstProdutos = [
+  {}
+];
 totalGeral = 0;
 totItens = 0;
 
@@ -25,20 +27,50 @@ function renderizarTela() {
       let imgTrahs = document.createElement("img");
       imgTrahs.setAttribute("src", "/img/trash.png");
 
-      console.log("Produto a Remover: " + resp.nome);
-
       let posicao = lstProdutos.indexOf(resp.nome);
 
-      console.log("Posição do Produto: " + posicao);
+      imgTrahs.setAttribute(
+        "onclick",
+        `removerProduto(${posicao}, ${resp.qtde}, ${resp.valorTotal})`
+      );
 
-      imgTrahs.setAttribute("onclick", `removerProduto(${posicao}, ${resp.qtde}, ${resp.valorTotal})`);
+      let nomeProduto = document.createElement("p");
+      nomeProduto.setAttribute("class", "dadosProd");
 
-      console.log("Trash: " + posicao);
+      let qtdeProduto = document.createElement("p");
+      qtdeProduto.setAttribute("class", "dadosProd");
+
+      let vlrProduto = document.createElement("p");
+      vlrProduto.setAttribute("class", "dadosProd");
+
+      let vlrTotProduto = document.createElement("p");
+      vlrTotProduto.setAttribute("class", "dadosProd");
 
       let produtoText = document.createTextNode(resp.nome);
+      nomeProduto.appendChild(produtoText);
+
+      let produtoQtd = document.createTextNode(resp.qtde);
+      qtdeProduto.appendChild(produtoQtd);
+
+      let produtoValorUnit = document.createTextNode(resp.valorUnit);
+      vlrProduto.appendChild(produtoValorUnit);
+
+      let totalProduto = resp.valorUnit * resp.qtde;
+      vlrTotProduto.append(totalProduto);
+
+      vlrTotProduto.innerHTML = totalProduto.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+
+      console.log("produtoText: " + produtoText);
 
       liItem.appendChild(imgCheck);
-      liItem.appendChild(produtoText);
+      liItem.appendChild(nomeProduto);
+      // liItem.appendChild(qtdeProduto);
+      // liItem.appendChild(vlrProduto);
+      liItem.appendChild(vlrTotProduto);
+      
       liItem.appendChild(imgTrahs);
 
       ulProdutos.appendChild(liItem);
@@ -80,10 +112,9 @@ function adicionarProduto() {
 }
 
 function removerProduto(posicao, qtd, vlr) {
-
-//   console.log("posicao: " + posicao);
-//   console.log("qtd: " + qtd);
-//   console.log("vlr: " + vlr);
+  //   console.log("posicao: " + posicao);
+  //   console.log("qtd: " + qtd);
+  //   console.log("vlr: " + vlr);
 
   lstProdutos.splice(posicao, 1);
 
