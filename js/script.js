@@ -7,7 +7,7 @@ let btnAdicionar = document.querySelector("#btnAdicionar");
 let totalProdutos = document.querySelector("#totalProdutos");
 let totalItens = document.querySelector("#totalItens");
 
-let lstProdutos = JSON.parse(localStorage.getItem("@compra") || [{}]);
+lstProdutos = JSON.parse(localStorage.getItem("@compra")) || [{}];
 totalGeral = 0;
 totItens = 0;
 
