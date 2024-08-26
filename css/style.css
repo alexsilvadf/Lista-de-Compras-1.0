@@ -16,7 +16,7 @@ height: 100vh;
 
 .container {
     background-color: #d1d1d1;
-    width: 95%;
+    width: 35%;
     border-radius: 10px;
     padding: 20px;
     margin: 100px auto 0 auto;
@@ -185,6 +185,10 @@ img:hover:nth-child(4) {
 
 
 @media (max-width: 440px){
+
+    .container{
+        width: 90%;
+    }
     .button-add-task{
         width: 95%;
     }
