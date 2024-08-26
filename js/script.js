@@ -7,7 +7,7 @@ let btnAdicionar = document.querySelector("#btnAdicionar");
 let totalProdutos = document.querySelector("#totalProdutos");
 let totalItens = document.querySelector("#totalItens");
 
-lstProdutos = [{}];
+let lstProdutos = JSON.parse(localStorage.getItem("@compra") || [{}]);
 totalGeral = 0;
 totItens = 0;
 
@@ -105,7 +105,11 @@ function adicionarProduto() {
     valorUnit.value = "";
     valorTotal.value = "";
 
+
+
     renderizarTela();
+
+    salvarDados();
   }
 }
 
@@ -120,6 +124,7 @@ function removerProduto(posicao, qtd, vlr) {
   totItens -= qtd;
 
   renderizarTela();
+  salvarDados();
 }
 
 renderizarTela();
@@ -147,3 +152,7 @@ valorUnit.addEventListener('input', () => {
     valorUnit.value = value.slice(0, -1); // Remove o último caractere inválido
   }
 });
+
+function salvarDados(){
+  localStorage.setItem("@compra", JSON.stringify(lstProdutos));
+}
