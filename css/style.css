@@ -192,5 +192,9 @@ img:hover:nth-child(4) {
     .button-add-task{
         width: 95%;
     }
+
+    h4, span{
+        font-size: 14px;
+    }
     
 }

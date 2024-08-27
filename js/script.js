@@ -13,10 +13,10 @@ totItens = 0;
 
 const maxDecimalPlaces = 2;
 
-// teste
-
 function renderizarTela() {
   ulProdutos.innerHTML = "";
+  totalGeral = 0;
+  totItens = 0;
 
   lstProdutos.map((resp) => {
     if (resp.nome !== undefined) {
@@ -60,6 +60,10 @@ function renderizarTela() {
       let totalProduto = resp.valorUnit * resp.qtde;
       vlrTotProduto.append(totalProduto);
 
+      totItens += parseInt(resp.qtde);
+
+      totalGeral += totalProduto;
+
       vlrTotProduto.innerHTML = totalProduto.toLocaleString("pt-br", {
         style: "currency",
         currency: "BRL",
@@ -98,14 +102,10 @@ function adicionarProduto() {
 
     totalGeral += vlrTotal;
 
-    totItens += parseInt(qtde.value);
-
     nomeProduto.value = "";
     qtde.value = "";
     valorUnit.value = "";
     valorTotal.value = "";
-
-
 
     renderizarTela();
 
@@ -116,12 +116,6 @@ function adicionarProduto() {
 function removerProduto(posicao, qtd, vlr) {
 
   lstProdutos.splice(posicao, 1);
-
-  let resultadoValor = vlr * qtd;  
-
-  totalGeral -= resultadoValor;
-
-  totItens -= qtd;
 
   renderizarTela();
   salvarDados();
