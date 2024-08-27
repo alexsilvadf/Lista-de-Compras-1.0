@@ -115,15 +115,26 @@ height: 100vh;
 }
 
 
+.dadosProd:nth-child(1) {
+    margin: 0 10px;
+    width: 70%;
+ 
+}
 
 .dadosProd:nth-child(2) {
     margin: 0 10px;
-    width: 80%;
+    width: 10%;
+ 
 }
 
-.dadosProd:nth-child(3) {
-    margin-right: 10px;
-}
+
+
+
+/* .dadosProd:nth-child(1) {
+    margin: 0 10px;
+    width: 80%;
+    border: 1px solid yellow;
+} */
 
 
 

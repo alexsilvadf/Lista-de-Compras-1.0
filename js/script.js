@@ -69,7 +69,7 @@ function renderizarTela() {
         currency: "BRL",
       });
 
-      liItem.appendChild(imgCheck);
+      // liItem.appendChild(imgCheck);
       liItem.appendChild(nomeProduto);
       liItem.appendChild(vlrTotProduto);
 
