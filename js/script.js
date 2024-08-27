@@ -72,7 +72,6 @@ function renderizarTela() {
       // liItem.appendChild(imgCheck);
       liItem.appendChild(nomeProduto);
       liItem.appendChild(vlrTotProduto);
-
       liItem.appendChild(imgTrahs);
 
       ulProdutos.appendChild(liItem);

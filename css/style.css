@@ -97,7 +97,6 @@ height: 100vh;
     width: 100%;
     list-style: none;
     margin-top: 25px;
-
 }
 
 .task {
@@ -110,34 +109,21 @@ height: 100vh;
     height: 50px;
     border-radius: 5px;
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 15px; 
+}
 
+.dadosProd{
+   
 }
 
 
 .dadosProd:nth-child(1) {
-    margin: 0 10px;
     width: 70%;
- 
 }
 
 .dadosProd:nth-child(2) {
-    margin: 0 10px;
-    width: 10%;
- 
+    max-width: 20%;
 }
-
-
-
-
-/* .dadosProd:nth-child(1) {
-    margin: 0 10px;
-    width: 80%;
-    border: 1px solid yellow;
-} */
-
-
-
 
 
 img {
